@@ -153,21 +153,21 @@ if "patient_id" in url_params:
         
         with info_col1:
             streamlit.subheader("📋 Clinical Profile")
-            streamlit.info(f"**System Risk Assessment:** {patient_data['condition']}")
-            streamlit.warning(f"**Known Allergies:** {patient_data['allergies']}")
+            streamlit.info(f"*System Risk Assessment:* {patient_data['condition']}")
+            streamlit.warning(f"*Known Allergies:* {patient_data['allergies']}")
             
             streamlit.markdown(f"""
-            * **Previous Medical History:** {patient_data['history']}
-            * **Current Medications:** {patient_data['medications']}
+            * *Previous Medical History:* {patient_data['history']}
+            * *Current Medications:* {patient_data['medications']}
             """)
 
         with info_col2:
             streamlit.subheader("📞 Contact Information")
             streamlit.markdown(f"""
-            * **📱 Primary Mobile:** {patient_data['contact']}
-            * **✉️ Email Address:** {patient_data['email']}
+            * *📱 Primary Mobile:* {patient_data['contact']}
+            * *✉️ Email Address:* {patient_data['email']}
             """)
-            streamlit.error(f"**🚨 Emergency Contact:** {patient_data['emergency_contact']}")
+            streamlit.error(f"*🚨 Emergency Contact:* {patient_data['emergency_contact']}")
             
     else:
         streamlit.error("Patient Record Not Found.")
@@ -177,7 +177,7 @@ else:
     # ROUTE B: MAIN LIVE WARD DASHBOARD (DEFAULT VIEW)
     # =================================================================
     streamlit.title("PulseGuard AI - Priority Triage Ward")
-    streamlit.write("Click on any **Patient Name** (in blue) to open their full Electronic Health Record in a new tab.")
+    streamlit.write("Click on any *Patient Name* (in blue) to open their full Electronic Health Record in a new tab.")
 
     @streamlit.fragment(run_every=2)
     def render_live_ward_table():
